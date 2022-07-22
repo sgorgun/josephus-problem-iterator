@@ -1,6 +1,6 @@
 # Josephus Problem
 
-An intermediate level task for practicing algorithms, loops and enumerable objects.
+An intermediate level task for practicing algorithms, loops and iterators.
 
 Estimated time to complete the task - 1h.
 
@@ -13,5 +13,5 @@ One of the talents that [Josephus Flavius](https://en.wikipedia.org/wiki/Josephu
 
 There are `n` people in the circle, numbered from `1` to `n`. When keeping the account in a circle, every `k`-th person is "crossed out" until one is left.
 
-* Implement the [GetCrossedOutPersons](JosephusProblem/JosephusFlavius.cs#L20) method to return an enumerable object that produce a list of persons that are crossed out.
+* Implement the [GetCrossedOutPersons](JosephusProblem/JosephusFlavius.cs#L20) method to return an *iterator* that generates a list of persons that are crossed out. Use [yield return statement](https://docs.microsoft.com/en-us/dotnet/csharp/iterators) to create an iterator.
 * Implement the [GetSurvivor](JosephusProblem/JosephusFlavius.cs#L29) method to return a survivor position number.

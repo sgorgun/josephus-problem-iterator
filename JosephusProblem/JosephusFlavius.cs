@@ -10,13 +10,13 @@ namespace JosephusProblem
     public static class JosephusFlavius
     {
         /// <summary>
-        /// Simulates the process of crossing out persons.
+        /// Returns the iterator that generates a list of persons that are crossed out.
         /// </summary>
         /// <param name="count">Count of the persons in circle.</param>
         /// <param name="skipped">Count of skipped persons before one of them will be crossed.</param>
-        /// <returns>A sequence of ordinal numbers of crossed out persons.</returns>
-        /// <exception cref="ArgumentException">Thrown when <paramref name="count"/> is less than 1.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skipped"/> is less than 1 or greater or equal to <paramref name="count"/>.</exception>
+        /// <returns>Returns the iterator that generates a list of persons that are crossed out.</returns>
+        /// <exception cref="ArgumentException"><paramref name="count"/> is less than 1.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="skipped"/> is less than 1 or greater or equal to <paramref name="count"/>.</exception>
         public static IEnumerable<int> GetCrossedOutPersons(int count, int skipped)
         {
             throw new NotImplementedException();
@@ -25,7 +25,7 @@ namespace JosephusProblem
         /// <summary>
         /// Returns order number of survivor.
         /// </summary>
-        /// <returns>The order number of survivor in Josephus Flavius problem.</returns>
+        /// <returns>The order number of the last survivor.</returns>
         public static int GetSurvivor(int count, int skipped)
         {
             throw new NotImplementedException();
