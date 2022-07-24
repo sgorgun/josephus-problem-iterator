@@ -13,11 +13,11 @@ namespace JosephusProblem
         /// Returns the iterator that generates a list of persons that are crossed out.
         /// </summary>
         /// <param name="count">Count of the persons in circle.</param>
-        /// <param name="skipped">Count of skipped persons before one of them will be crossed.</param>
+        /// <param name="crossedOut">The number of the person to be crossed out.</param>
         /// <returns>Returns the iterator that generates a list of persons that are crossed out.</returns>
-        /// <exception cref="ArgumentException"><paramref name="count"/> is less than 1.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="skipped"/> is less than 1 or greater or equal to <paramref name="count"/>.</exception>
-        public static IEnumerable<int> GetCrossedOutPersons(int count, int skipped)
+        /// <exception cref="ArgumentException"><paramref name="count"/>is less than 1.</exception>
+        /// <exception cref="ArgumentException"><paramref name="crossedOut"/> is less than 1.</exception>
+        public static IEnumerable<int> GetCrossedOutPersons(int count, int crossedOut)
         {
             throw new NotImplementedException();
         }
@@ -25,8 +25,12 @@ namespace JosephusProblem
         /// <summary>
         /// Returns order number of survivor.
         /// </summary>
+        /// <param name="count">Count of the persons in circle.</param>
+        /// <param name="crossedOut">The number of the person to be crossed out.</param>
         /// <returns>The order number of the last survivor.</returns>
-        public static int GetSurvivor(int count, int skipped)
+        /// <exception cref="ArgumentException"><paramref name="count"/>is less than 1.</exception>
+        /// <exception cref="ArgumentException"><paramref name="crossedOut"/> is less than 1.</exception>
+        public static int GetSurvivor(int count, int crossedOut)
         {
             throw new NotImplementedException();
         }
