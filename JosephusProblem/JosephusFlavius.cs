@@ -19,7 +19,24 @@ namespace JosephusProblem
         /// <exception cref="ArgumentException"><paramref name="crossedOut"/> is less than 1.</exception>
         public static IEnumerable<int> GetCrossedOutPersons(int count, int crossedOut)
         {
-            throw new NotImplementedException();
+            CheckExceptions(count, crossedOut);
+
+            return GetCrossedOutPersons();
+
+            IEnumerable<int> GetCrossedOutPersons()
+            {
+                var q = MakeQueue(count);
+
+                while (q.Count > 1)
+                {
+                    for (int i = 1; i < crossedOut; i++)
+                    {
+                        q.Enqueue(q.Dequeue());
+                    }
+
+                    yield return q.Dequeue();
+                }
+            }
         }
 
         /// <summary>
@@ -32,7 +49,45 @@ namespace JosephusProblem
         /// <exception cref="ArgumentException"><paramref name="crossedOut"/> is less than 1.</exception>
         public static int GetSurvivor(int count, int crossedOut)
         {
-            throw new NotImplementedException();
+            CheckExceptions(count, crossedOut);
+
+            var q = MakeQueue(count);
+
+            while (q.Count > 1)
+            {
+                for (int i = 1; i < crossedOut; i++)
+                {
+                    q.Enqueue(q.Dequeue());
+                }
+
+                q.Dequeue();
+            }
+
+            return q.Dequeue();
+        }
+
+        private static Queue<int> MakeQueue(int count)
+        {
+            var q = new Queue<int>(count);
+            for (int i = 1; i <= count; i++)
+            {
+                q.Enqueue(i);
+            }
+
+            return q;
+        }
+
+        private static void CheckExceptions(int count, int crossedOut)
+        {
+            if (count < 1)
+            {
+                throw new ArgumentException($"{nameof(count)} is less than 1.");
+            }
+
+            if (crossedOut < 1)
+            {
+                throw new ArgumentException($"{nameof(crossedOut)} is less than 1.");
+            }
         }
     }
 }
